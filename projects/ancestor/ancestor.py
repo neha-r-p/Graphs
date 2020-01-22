@@ -11,5 +11,7 @@ def earliest_ancestor(ancestors, starting_node):
         if ancestor[1] not in graph.vertices:
             graph.add_vertex(ancestor[1])
         # print("parent", ancestor[0], "child", ancestor[1])
-    print("graph vertices", graph.vertices)
+        graph.add_edge(ancestor[1], ancestor[0])
+    
+    print("graph", graph.vertices)
 
