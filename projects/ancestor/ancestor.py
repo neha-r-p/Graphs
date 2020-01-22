@@ -22,18 +22,27 @@ def earliest_ancestor(ancestors, starting_node):
         queue.enqueue([starting_node])
         
         visited = set()
+        oldest_ancestor = starting_node
+        current_length = 0
 
         while queue.size() > 0:
             path = queue.dequeue()
             vertex = path[-1]
             if vertex not in visited:
                 if graph.vertices[vertex] == set():
-                    oldest_ancestor = path[-1]
+                    if vertex > oldest_ancestor and len(path) == current_length:
+                        pass
+                    else:
+                        current_length = len(path)
+                        oldest_ancestor = path[-1]
             visited.add(vertex)
 
             for next_vert in graph.get_neighbors(vertex):
                 new_path = list(path)
                 new_path.append(next_vert)
                 queue.enqueue(new_path)
-        return oldest_ancestor
+        if oldest_ancestor == starting_node:
+            return None
+        else:
+            return oldest_ancestor
 
