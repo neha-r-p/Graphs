@@ -1,5 +1,13 @@
 # Social Graph
 
+graph - social network
+node - individuals/users
+edge - friendships, bidirectional/undirected
+connected components - user's extended social network
+
+dfs/t?
+bfs/t? find the shortest path to someone in extended network
+
 You have been assigned the task of building a new friend-based social network. In this network, users are able to view their own friends, friends of their friends, friends of their friends' friends, and so on. People connected to you through any number of friendship connections are considered a part of your extended social network.
 
 The functionality behind creating users and friendships has been completed already. Your job is to implement a function that shows all the friends in a user's extended social network and chain of friendships that link them. The number of connections between one user and another are called the degrees of separation.
